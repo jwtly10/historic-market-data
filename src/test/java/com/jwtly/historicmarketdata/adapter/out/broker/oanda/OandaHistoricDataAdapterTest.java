@@ -22,16 +22,16 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class OandaDataAdapterTest {
+class OandaHistoricDataAdapterTest {
 
     @Mock
     private OandaClient oandaClient;
 
-    private OandaDataAdapter adapter;
+    private OandaHistoricDataAdapter adapter;
 
     @BeforeEach
     void setUp() {
-        adapter = new OandaDataAdapter(oandaClient);
+        adapter = new OandaHistoricDataAdapter(oandaClient);
     }
 
     @Test
