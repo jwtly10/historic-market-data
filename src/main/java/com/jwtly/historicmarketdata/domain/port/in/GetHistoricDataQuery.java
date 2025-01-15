@@ -1,4 +1,4 @@
-package com.jwtly.historicmarketdata.domain;
+package com.jwtly.historicmarketdata.domain.port.in;
 
 import com.jwtly.historicmarketdata.domain.model.Broker;
 import com.jwtly.historicmarketdata.domain.model.Period;

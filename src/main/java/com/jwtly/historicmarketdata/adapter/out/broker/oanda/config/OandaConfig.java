@@ -1,4 +1,4 @@
-package com.jwtly.historicmarketdata.config.broker.oanda;
+package com.jwtly.historicmarketdata.adapter.out.broker.oanda.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import java.net.http.HttpClient;
 
 @Configuration
-public class OandaConfiguration {
+public class OandaConfig {
 
     @Bean
     public HttpClient httpClient() {

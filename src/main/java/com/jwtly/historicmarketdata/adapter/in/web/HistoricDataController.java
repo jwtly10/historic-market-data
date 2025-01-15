@@ -1,9 +1,9 @@
 package com.jwtly.historicmarketdata.adapter.in.web;
 
-import com.jwtly.historicmarketdata.domain.GetHistoricDataQuery;
 import com.jwtly.historicmarketdata.domain.model.Broker;
 import com.jwtly.historicmarketdata.domain.model.OHCLV;
 import com.jwtly.historicmarketdata.domain.model.Period;
+import com.jwtly.historicmarketdata.domain.port.in.GetHistoricDataQuery;
 import com.jwtly.historicmarketdata.domain.port.in.GetHistoricDataUseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +18,10 @@ import java.util.List;
 @RequestMapping("api/v1/candles")
 @Tag(name = "Historical Market Data", description = "APIs for pulling historic market candle data")
 public class HistoricDataController {
-    private final GetHistoricDataUseCase getHistoricDataUseCase;
+    private final GetHistoricDataUseCase service;
 
-    public HistoricDataController(GetHistoricDataUseCase getHistoricDataUseCase) {
-        this.getHistoricDataUseCase = getHistoricDataUseCase;
+    public HistoricDataController(GetHistoricDataUseCase service) {
+        this.service = service;
     }
 
     @GetMapping
@@ -33,6 +33,6 @@ public class HistoricDataController {
             @RequestParam String broker
     ) {
         var query = new GetHistoricDataQuery(symbol, period, from, to, Broker.fromString(broker));
-        return getHistoricDataUseCase.getHistoricData(query);
+        return service.getHistoricData(query);
     }
 }

@@ -25,7 +25,7 @@ public class OandaHistoricDataAdapter implements HistoricDataPort {
 
     @Override
     public List<OHCLV> getHistoricData(String symbol, Period period, Instant from, Instant to) throws BrokerRequestException {
-        log.info("Fetching historic data for symbol {} ({}) from {} to {}", symbol, period, from, to);
+        log.debug("Fetching historic data for symbol {} ({}) from {} to {}", symbol, period, from, to);
         validateRequest(symbol, period, from, to);
         var start = Instant.now();
         var batches = 0;
